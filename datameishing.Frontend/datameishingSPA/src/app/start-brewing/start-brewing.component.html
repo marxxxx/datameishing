@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>Beers</mat-card-header>
+  <mat-card-content>
+    <mat-progress-bar *ngIf="isBusy" color="accent" mode="indeterminate"></mat-progress-bar>
+    <ul>
+      <li *ngFor="let b of beers">
+        {{b.name}}
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+

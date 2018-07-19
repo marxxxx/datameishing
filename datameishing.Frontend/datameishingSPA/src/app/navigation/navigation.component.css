@@ -1,0 +1,22 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+app-user-profile {
+  margin-left: auto;
+}
+
+button[mat-list-item] {
+  width: 100%;
+  margin-top: 10px;
+}
+

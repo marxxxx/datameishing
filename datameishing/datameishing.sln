@@ -3,9 +3,68 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "datameishing.Frontend", "..\datameishing.Frontend\", "{8122854D-1E3A-4F6C-946E-CFD225ACB3D8}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59308"
+		Debug.AspNetCompiler.PhysicalPath = "..\datameishing.Frontend\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59308\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59308"
+		Release.AspNetCompiler.PhysicalPath = "..\datameishing.Frontend\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59308\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59308"
+		SlnRelativePath = "..\datameishing.Frontend\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datamaishing.Models", "datameishing.Models\datamaishing.Models.csproj", "{3828BFAC-A9E0-4479-8840-A121CEA7EB66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{30046724-2562-4E2E-9EB4-2F095FD83826}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{23EB4DDE-C162-456F-A9C0-7080C31DB93B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datamaishing.Backend", "datamaishing.Backend\datamaishing.Backend.csproj", "{B254CD2A-3F4E-4911-B8AD-54894D6DAE1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analytics", "Analytics", "{34DD7FE3-CBCC-4A10-A58C-AF7DF3D88763}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datamaishing.Brewstarter", "datamaishing.Brewstarter\datamaishing.Brewstarter.csproj", "{DAC9E96C-E3F7-45BF-919B-8676D68BA5ED}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8122854D-1E3A-4F6C-946E-CFD225ACB3D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8122854D-1E3A-4F6C-946E-CFD225ACB3D8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8122854D-1E3A-4F6C-946E-CFD225ACB3D8}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3828BFAC-A9E0-4479-8840-A121CEA7EB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3828BFAC-A9E0-4479-8840-A121CEA7EB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3828BFAC-A9E0-4479-8840-A121CEA7EB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3828BFAC-A9E0-4479-8840-A121CEA7EB66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B254CD2A-3F4E-4911-B8AD-54894D6DAE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B254CD2A-3F4E-4911-B8AD-54894D6DAE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B254CD2A-3F4E-4911-B8AD-54894D6DAE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B254CD2A-3F4E-4911-B8AD-54894D6DAE1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC9E96C-E3F7-45BF-919B-8676D68BA5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC9E96C-E3F7-45BF-919B-8676D68BA5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC9E96C-E3F7-45BF-919B-8676D68BA5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC9E96C-E3F7-45BF-919B-8676D68BA5ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3828BFAC-A9E0-4479-8840-A121CEA7EB66} = {23EB4DDE-C162-456F-A9C0-7080C31DB93B}
+		{B254CD2A-3F4E-4911-B8AD-54894D6DAE1F} = {23EB4DDE-C162-456F-A9C0-7080C31DB93B}
+		{DAC9E96C-E3F7-45BF-919B-8676D68BA5ED} = {34DD7FE3-CBCC-4A10-A58C-AF7DF3D88763}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B17E3A7C-606C-4115-A162-01EE09B40783}
