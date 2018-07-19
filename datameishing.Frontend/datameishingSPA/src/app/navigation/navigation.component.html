@@ -5,8 +5,8 @@
     <mat-nav-list>
       <a mat-list-item href="#" routerLink="/">Home</a>
       <mat-divider></mat-divider>
-      <a mat-list-item href="#" routerLink="/start">Start brewing</a>
-      <a mat-list-item href="#" routerLink="/monitor">Monitor brewing</a>
+      <a mat-list-item href="#" routerLink="/start" *ngIf="isLoggedIn">Start brewing</a>
+      <a mat-list-item href="#" routerLink="/monitor" *ngIf="isLoggedIn">Monitor brewing</a>
       <mat-divider></mat-divider>
       <div>
         <button mat-list-item mat-flat-button *ngIf="!isLoggedIn" (click)="onLogin()">Login</button>

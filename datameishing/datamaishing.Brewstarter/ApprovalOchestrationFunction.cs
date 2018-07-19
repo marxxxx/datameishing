@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
@@ -6,11 +7,16 @@ using datamaishing.Models;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
+using Newtonsoft.Json;
+using WebPush;
 
 namespace datamaishing.Brewstarter
 {
     public static class ApprovalOchestrationFunction
     {
+        private const string PushPublicKey = "BJp7bbqgPW3Y0U_O7hGzng2c7gENxgTFPM_LHbt3_88c3qoFxYI61LqWz2fWhJNsIbHZOcScyUybUbpU9gSS1Hs";
+        private const string PushPrivateKey = "yPUw-LMY2-fMGbqGTEuR6VBai6AcSNjLaX5cQRreBF8";
+
         [FunctionName("ApprovalOchestrationFunction")]
         public static async Task RunOrchestrator(
             [OrchestrationTrigger] DurableOrchestrationContext context)
@@ -28,13 +34,19 @@ namespace datamaishing.Brewstarter
 
                 Task winner = await Task.WhenAny(approvalResponse, timeoutTask);
 
-                if(winner == approvalResponse)
+                if (winner == approvalResponse)
                 {
                     // send response to client
+                    SendPushNotification(request.SubscriptionEndpoint, request.p256dh, request.auth,
+                        "Beer approval", approvalResponse.Result ? "Beer is brewing" : "No beer for you!",
+                        approvalResponse.Result);
                 }
                 else
                 {
                     // timeout
+                    SendPushNotification(request.SubscriptionEndpoint, request.p256dh, request.auth, 
+                        "Timeout", "Brewmaster didn't give a shit about you.",
+                        approvalResponse.Result);
                 }
 
                 if (!timeoutTask.IsCompleted)
@@ -44,10 +56,30 @@ namespace datamaishing.Brewstarter
                 }
             }
 
-          
+
 
 
         }
 
+        private static void SendPushNotification(string subscriptionEndpoint, string p256dh, string auth, 
+            string title, string body,
+            bool result)
+        {
+            var webPushClient = new WebPushClient();
+            var vapidDetails = new VapidDetails("mailto:brewmaster@datamaishing.com", PushPublicKey, PushPrivateKey);
+
+            var message = new PushMessageModel()
+            {
+                notification = new NotificationModel()
+                {
+                    title = title,
+                    body = body,
+                    Result = result
+                }
+            };
+
+            webPushClient.SendNotification(new PushSubscription(subscriptionEndpoint, p256dh, auth), JsonConvert.SerializeObject(message), vapidDetails);
+
+        }
     }
 }

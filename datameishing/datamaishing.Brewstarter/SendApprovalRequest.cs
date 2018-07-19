@@ -27,6 +27,11 @@ namespace datamaishing.Brewstarter
 
             message = new SendGridMessage();
             message.AddTo("markus.strobl@dataformers.at", "Braumeister");
+            message.AddTo("manuel.mairhuber@dataformers.at", "Braumeister");
+            message.AddTo("gunther.mitterndorfer@dataformers.at", "Braumeister");
+            message.AddTo("rainer.sieberer@dataformers.at", "Braumeister");
+            // Gunther Mitterndorfer <gunther.mitterndorfer@dataformers.at>
+            // Rainer Sieberer <rainer.sieberer@dataformers.at>
             message.SetFrom(request.Email);
             message.SetSubject($"{request.Name} is requesting a {request.Receipt}");
 

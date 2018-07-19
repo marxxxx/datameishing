@@ -24,7 +24,7 @@ namespace datamaishing.Brewstarter
             var instanceId = await orchestrationClient.StartNewAsync("ApprovalOchestrationFunction", req);
             log.Info($"ApprovalOrchestration started with instance id {instanceId}");
 
-            return new OkResult();
+            return new OkObjectResult(new { instanceId = instanceId });
         }
     }
 }

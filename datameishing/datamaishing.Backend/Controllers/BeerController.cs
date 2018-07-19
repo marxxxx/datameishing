@@ -17,7 +17,7 @@ namespace datamaishing.Backend.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<BeerModel>> Get()
         {
-            return new BeerModel[] { new BeerModel(1, "Stiegl"), new BeerModel(2, "Gösser") };
+            return new BeerModel[] { new BeerModel(1, "Stiegl"), new BeerModel(2, "Gösser"), new BeerModel(3, "Zipfer"), new BeerModel(4, "Kaiser") };
         }
 
 
