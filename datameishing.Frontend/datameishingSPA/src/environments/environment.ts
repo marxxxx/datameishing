@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  BackendRootUrl: 'https://localhost:5001/'
+  BackendRootUrl: 'https://localhost:5001/',
+  BrewTelemetryBaseUrl: 'http://localhost:7071/api/'
 };
 
 /*

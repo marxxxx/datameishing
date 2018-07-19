@@ -1,3 +1,4 @@
+import { BrewTelemetryService } from './services/brew-telemetry.service';
 import { DataService } from './services/data.service';
 import { AuthService } from './services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,11 +18,14 @@ export class AppComponent implements OnInit {
     private dataService: DataService,
     private pushService: SwPush,
     private updateService: SwUpdate,
+    private brewTelemetryService: BrewTelemetryService,
     private snackbar: MatSnackBar) {
   }
 
   ngOnInit() {
     this.authService.checkAuthenticated();
+
+    this.brewTelemetryService.init();
 
     this.updateService.available.subscribe(e => {
       this.snackbar.open(`Update available! Press F5 to install.`, 'OK');

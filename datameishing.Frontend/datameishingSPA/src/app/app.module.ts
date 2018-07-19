@@ -1,3 +1,4 @@
+import { BrewTelemetryService } from './services/brew-telemetry.service';
 import { AuthService } from './services/auth.service';
 import { DataService } from './services/data.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,7 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { CallbackComponent } from './callback/callback.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FormsModule } from '../../node_modules/@angular/forms';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -51,9 +53,10 @@ import { FormsModule } from '../../node_modules/@angular/forms';
     MatDividerModule,
     FlexLayoutModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    ChartsModule
   ],
-  providers: [DataService, AuthService],
+  providers: [DataService, AuthService, BrewTelemetryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
