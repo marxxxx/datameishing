@@ -12,13 +12,15 @@ import { map } from 'rxjs/operators';
 export class NavigationComponent {
 
   isLoggedIn = false;
+  isBrewingApproved = false;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public authService: AuthService) {
+  constructor(private breakpointObserver: BreakpointObserver,
+    public authService: AuthService) {
     authService.isLoggedIn$.subscribe( l => {
       this.isLoggedIn = l;
     });

@@ -46,7 +46,7 @@ namespace datamaishing.Brewstarter
                     // timeout
                     SendPushNotification(request.SubscriptionEndpoint, request.p256dh, request.auth, 
                         "Timeout", "Brewmaster didn't give a shit about you.",
-                        approvalResponse.Result);
+                        false);
                 }
 
                 if (!timeoutTask.IsCompleted)
